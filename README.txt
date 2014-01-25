@@ -1,5 +1,4 @@
 BLACKJACK! 
-
 ==========
 A very simple command-line run BlackJack game that I wrote in Java. 
 
