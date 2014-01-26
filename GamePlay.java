@@ -13,8 +13,8 @@ public class GamePlay{
 	// Initialize variables. 
 	private static ArrayList<Player> players = new ArrayList<Player>(); 
 	private static int numPlayers = 2; 
-	private static int[] scores = new int[numPlayers]; 
-	private static String[] names = new String[numPlayers];
+	private static ArrayList<Integer> scores = new ArrayList<Integer>(); 
+	private static ArrayList<String> names = new ArrayList<String>();
 	private static byte playerCount = 0; 
 	
 	/**
@@ -29,22 +29,22 @@ public class GamePlay{
 			if (p.get(i).hasBusted()){
 				continue; 
 			} else { // Add the score of the player if they have NOT busted. 
-				scores[i] = p.get(i).playerHand.getHandScore();
-				names[i] = p.get(i).getNameOfPlayer(); 
+				scores.add(p.get(i).playerHand.getHandScore());
+				names.add(p.get(i).getNameOfPlayer()); 
 			}
 		}
 		// Set the initial max score to the value at the first index. 
-		int maxScore = scores[0]; 
+		int maxScore = scores.get(0); 
 		// Max variable to hold the index of the greatest score. Initially 0. 
 		int maxIndex = 0;  
-		for (int j = 0; j < scores.length; j++){
-			if (scores[j] > maxScore){
+		for (int j = 0; j < scores.size(); j++){
+			if (scores.get(j) > maxScore){
 				// If the score is greater than the current max, replace the max with the new index. 
 				maxIndex = j; 
 			}
 		}
 		// Print the name of the player with the highest score. 
-		System.out.println("The winner of the game is " + names[maxIndex] + ". Congratulations!"); 
+		System.out.println("The winner of the game is " + names.get(maxIndex) + ". Congratulations!"); 
 	} // End getWinner.
 	
 	/**
