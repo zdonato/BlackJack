@@ -82,11 +82,7 @@ public class Player{
 	 * @return True if the player has BlackJack, false otherwise. 
 	 */ 
 	protected boolean hasBlackJack(){
-		if ((playerHand.getValueOfCard(0) == 10 && playerHand.getValueOfCard(1) == 11) || (playerHand.getValueOfCard(0) == 11 && playerHand.getValueOfCard(1) == 10)){
-			return true; 
-		} else {
-			return false; 
-		}
+		return (playerHand.getValueOfCard(0) == 10 && playerHand.getValueOfCard(1) == 11) || (playerHand.getValueOfCard(0) == 11 && playerHand.getValueOfCard(1) == 10);
 	} 
 	
 	/**
